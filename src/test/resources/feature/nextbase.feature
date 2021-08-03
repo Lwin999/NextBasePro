@@ -10,3 +10,4 @@ Feature: Login Functionality
     When User clicks on "Message" tab
     And User enter any "text" on the "Message" field
     Then User able to click Send button
+
