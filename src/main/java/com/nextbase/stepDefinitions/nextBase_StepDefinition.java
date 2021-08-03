@@ -35,6 +35,7 @@ public class nextBase_StepDefinition {
         String fakerName  = faker.name().fullName();
         homePage.messagebody.sendKeys(fakerName);
         Driver.getDriver().switchTo().defaultContent();
+        //faker class needed
 
 
     }
