@@ -1,5 +1,6 @@
 package com.nextbase.stepDefinitions;
 
+import com.github.javafaker.Faker;
 import com.nextbase.page.HomePage;
 import com.nextbase.page.LoginPage;
 import com.nextbase.utility.BrowserUtils;
@@ -12,6 +13,8 @@ import io.cucumber.java.en.When;
 import javax.security.auth.login.Configuration;
 
 public class nextBase_StepDefinition {
+
+
 
     LoginPage login = new LoginPage();
     HomePage homePage = new HomePage();
@@ -28,8 +31,12 @@ public class nextBase_StepDefinition {
     public void user_enter_any_on_the_field(String text, String Message) {
         Driver.getDriver().switchTo().frame(homePage.messageFrame);
         BrowserUtils.sleep(1);
-        homePage.messagebody.sendKeys(text);
+        Faker faker = new Faker();
+        String fakerName  = faker.name().fullName();
+        homePage.messagebody.sendKeys(fakerName);
         Driver.getDriver().switchTo().defaultContent();
+
+
     }
 
     @Then("User able to click Send button")
