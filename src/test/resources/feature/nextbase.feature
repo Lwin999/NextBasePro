@@ -12,6 +12,7 @@ Feature: Login Functionality
     And User enter any "text" on the "Message" field
     Then User able to click Send button
 
+
   @wip2
   Scenario: User cancel messages
     When User clicks on "Message" tab

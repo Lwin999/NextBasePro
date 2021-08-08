@@ -1,16 +1,24 @@
 package com.nextbase.page;
 
+
 import com.nextbase.utility.ConfigurationReader;
+import com.github.javafaker.Faker;
+
 import com.nextbase.utility.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends BasePage{
-    public HomePage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+public class HomePage extends BasePage {
+    public HomePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+
     }
+
+
+
+
 
     @FindBy(xpath = "//span[.='Message']//span")
     public WebElement messageButton;
@@ -88,3 +96,5 @@ public class HomePage extends BasePage{
     }
 
 }
+
+

@@ -17,6 +17,8 @@ import javax.security.auth.login.Configuration;
 
 public class nextBase_StepDefinition {
 
+
+
     LoginPage login = new LoginPage();
     HomePage homePage = new HomePage();
     @Given("User is logged in and on the home page")
@@ -33,10 +35,20 @@ public class nextBase_StepDefinition {
     public void user_enter_any_on_the_field(String text, String Message) {
         Driver.getDriver().switchTo().frame(homePage.messageFrame);
         BrowserUtils.sleep(1);
+
         Faker name = new Faker();
         String randommessage = name.name().name();
         homePage.messagebody.sendKeys(randommessage);
+
+        Faker faker = new Faker();
+        String fakerName  = faker.name().fullName();
+        homePage.messagebody.sendKeys(fakerName);
+
         Driver.getDriver().switchTo().defaultContent();
+        //faker class needed
+
+
+
     }
     @Then("User able to click Send button")
     public void userAbleToClickSendButton() {
