@@ -1,13 +1,17 @@
 package com.nextbase.stepDefinitions;
 
+import com.github.javafaker.Faker;
 import com.nextbase.page.HomePage;
 import com.nextbase.page.LoginPage;
 import com.nextbase.utility.BrowserUtils;
 import com.nextbase.utility.ConfigurationReader;
 import com.nextbase.utility.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 
 import javax.security.auth.login.Configuration;
 
@@ -21,19 +25,64 @@ public class nextBase_StepDefinition {
     }
 
     @When("User clicks on {string} tab")
-    public void user_clicks_on_tab(String string) {
-    homePage.messageButton.click();
+    public void user_clicks_on_tab(String message) {
+    //homePage.messageButton.click();
+        homePage.tabClicker(message);
     }
     @When("User enter any {string} on the {string} field")
     public void user_enter_any_on_the_field(String text, String Message) {
         Driver.getDriver().switchTo().frame(homePage.messageFrame);
         BrowserUtils.sleep(1);
-        homePage.messagebody.sendKeys(text);
+        Faker name = new Faker();
+        String randommessage = name.name().name();
+        homePage.messagebody.sendKeys(randommessage);
         Driver.getDriver().switchTo().defaultContent();
     }
-
     @Then("User able to click Send button")
     public void userAbleToClickSendButton() {
         homePage.sendBtn.click();
+    }
+    @Then("User able to click Cancel button")
+    public void user_able_to_click_cancel_button() {
+        homePage.messageButton.click();
+        BrowserUtils.sleep(1);
+        homePage.cancelBtn.click();
+    }
+    @When("User able to click link button")
+    public void user_able_to_click_link_button() {
+        homePage.linkBtn.click();
+    }
+    @When("User able to input Text")
+    public void user_able_to_input_text() {
+        BrowserUtils.sleep(2);
+        homePage.textinput.sendKeys("orange");
+    }
+    @When("User able to input Link")
+    public void user_able_to_input_link() {
+        homePage.linkinput.sendKeys("www.gooogle.com");
+    }
+    @Then("User able to click Save button")
+    public void user_able_to_click_save_button() {
+        homePage.saveBtn.click();
+        BrowserUtils.sleep(2);
+    }
+    @And("User write a {string} pollbox")
+    public void userWriteAPollbox(String arg0) {
+        homePage.pollquestionandtxt(arg0);
+    }
+    @And("User fills out the {string} box")
+    public void userFillsOutTheBox(String arg0) {
+        homePage.pollquestionandtxt(arg0);
+    }
+    @And("User clicks on {string} button")
+    public void userClicksOnButton(String arg0) {
+        homePage.sendBtn.click();
+    }
+    @Then("poll should be visible in Activity Stream")
+    public void pollShouldBeVisibleInActivityStream() {
+        String expectedPollText = ConfigurationReader.getProperty("question");
+        BrowserUtils.sleep(2);
+        String actualPollText = homePage.pollTextCreated.getText();
+        Assert.assertEquals(actualPollText,expectedPollText);
     }
 }
