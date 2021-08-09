@@ -97,6 +97,21 @@ public class nextBase_StepDefinition {
         String actualPollText = homePage.pollTextCreated.getText();
         Assert.assertEquals(actualPollText,expectedPollText);
     }
+
+
+    @And("User clicks selects answer box")
+    public void userClicksSelectsAnswerBox() {
+        BrowserUtils.sleep(1);
+        homePage.firstAnsVote.click();
+    }
+
+    @Then("User clicks {string} button")
+    public void userClicksButton(String arg0) {
+        BrowserUtils.sleep(1);
+       homePage.setVoteButton(arg0);
+    }
+
+
     @Then("User able to see error message {string}")
     public void userAbleToSeeErrorMessage(String arg0) {
         String expectedErrorMessage = ConfigurationReader.getProperty("errorMsg");
@@ -119,6 +134,7 @@ public class nextBase_StepDefinition {
         BrowserUtils.sleep(1);
 
     }
+
 
 
 
