@@ -13,7 +13,11 @@ import org.junit.runner.RunWith;
         glue = "com/nextbase/stepDefinitions",
         dryRun = false,
 
-        tags = "@us005"
+
+    
+
+        tags = ""
+
 )
 public class CukesRunner {
 }
