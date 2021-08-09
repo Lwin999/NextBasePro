@@ -77,6 +77,18 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[@class='bx-vote-question-title']")
     public WebElement pollTextCreated;
 
+    @FindBy(xpath = "//span[.='Yes, I am an SDET'][1]")
+    public WebElement firstAnsVote;
+
+    @FindBy(xpath = "//button[.='Vote'][1]")
+    public WebElement voteButton;
+
+    public void setVoteButton(String voteTab){
+        Driver.getDriver().findElement(By.xpath("//button[.='"+voteTab+"']")).click();
+
+            }
+
+
     public void tabClicker(String tabName){
         Driver.getDriver().findElement(By.xpath("//span[.='"+tabName+"']")).click();
     }
