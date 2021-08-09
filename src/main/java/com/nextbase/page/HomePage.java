@@ -77,8 +77,20 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//div[@class='bx-vote-question-title']")
     public WebElement pollTextCreated;
 
+    @FindBy(xpath = "//span[.='The message title is not specified']")
+    public WebElement errorMessage;
+
+    @FindBy(xpath = "//input[@id='multi_0']")
+    public WebElement allowmultipleselect;
+
+    @FindBy(xpath = "//a[.='Add question']")
+    public WebElement addquestionbtn;
+
     public void tabClicker(String tabName){
         Driver.getDriver().findElement(By.xpath("//span[.='"+tabName+"']")).click();
+    }
+    public void sendOrCancel(String buttonName){
+        Driver.getDriver().findElement(By.xpath("//button[.='"+buttonName+"']")).click();
     }
 
     public void pollquestionandtxt(String str){
