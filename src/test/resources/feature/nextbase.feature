@@ -10,7 +10,7 @@ Feature: Login Functionality
   Scenario: User send message with "Message" tab
     When User clicks on "Message" tab
     And User enter any "text" on the "Message" field
-    Then User able to click Send button
+    Then User able to click "Send" button
 
 
   @wip2
@@ -29,27 +29,31 @@ Feature: Login Functionality
 
   @wip4
   Scenario: User create a poll with Q/A
-
     When User clicks on "Poll" tab
     And User enter any "text" on the "Poll" field
     And User fills out the "Question" box
     And User fills out the "Answer1" box
     And User fills out the "Answer2" box
-    And User able to click Send button
+    And User able to click "Send" button
     Then poll should be visible in Activity Stream
 
+  @wip5
+  Scenario: Users get error message "The message title is not specified"
+    When User clicks on "Poll" tab
+    And User able to click "Send" button
+    Then User able to see error message "The message title is not specified"
 
+  @wip6
+  Scenario: Users check "allow multiple Choice" while create a poll
+    When User clicks on "Poll" tab
+    Then User able to select "allow multiple Choice"
 
-#
-#  @wip5
-#  Scenario: Users get error message "The message title is not specified"
-# When User clicks on "Poll" tab
-#  @wip6
-#  Scenario: Users check "allow multiple Choice" while create a poll
-#
-#  @wip7
-#  Scenario: Users can add more questions to a poll
-#
-#  @wip8
-#  Scenario: Users are able to cancle creating a poll
+  @wip7
+  Scenario: Users can add more questions to a poll
+    When User clicks on "Poll" tab
+    And User able to click Add question button
 
+  @wip8
+  Scenario: Users are able to cancel creating a poll
+    When User clicks on "Poll" tab
+    And User able to click "Cancel" button

@@ -47,13 +47,13 @@ public class nextBase_StepDefinition {
         Driver.getDriver().switchTo().defaultContent();
         //faker class needed
 
-
-
     }
-    @Then("User able to click Send button")
-    public void userAbleToClickSendButton() {
+
+    @And("User able to click {string} button")
+    public void userAbleToClickButton(String arg0) {
         homePage.sendBtn.click();
     }
+
     @Then("User able to click Cancel button")
     public void user_able_to_click_cancel_button() {
         homePage.messageButton.click();
@@ -97,4 +97,29 @@ public class nextBase_StepDefinition {
         String actualPollText = homePage.pollTextCreated.getText();
         Assert.assertEquals(actualPollText,expectedPollText);
     }
+    @Then("User able to see error message {string}")
+    public void userAbleToSeeErrorMessage(String arg0) {
+        String expectedErrorMessage = ConfigurationReader.getProperty("errorMsg");
+        BrowserUtils.sleep(1);
+        String actualErrorMessage = homePage.errorMessage.getText();
+        Assert.assertEquals(actualErrorMessage,expectedErrorMessage);
+
+    }
+    @Then("User able to select {string}")
+    public void userAbleToSelect(String arg0) {
+        BrowserUtils.sleep(2);
+        homePage.allowmultipleselect.click();
+        homePage.allowmultipleselect.isSelected();
+    }
+
+    @And("User able to click Add question button")
+    public void userAbleToClickAddQuestionButton() {
+        homePage.addquestionbtn.click();
+        homePage.addquestionbtn.isSelected();
+        BrowserUtils.sleep(1);
+
+    }
+
+
+
 }
