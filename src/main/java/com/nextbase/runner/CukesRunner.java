@@ -13,9 +13,6 @@ import org.junit.runner.RunWith;
         glue = "com/nextbase/stepDefinitions",
         dryRun = false,
 
-
-    
-
         tags = ""
 
 )
