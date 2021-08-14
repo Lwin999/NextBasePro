@@ -22,12 +22,6 @@ public class ClockStepDefinition  {
         clockPage.ClockInTab.click();
     }
 
-
-//    @When("user can able to click {string} button")
-//    public void user_can_able_to_click_button(String clockIn) {
-//        Driver.getDriver().findElement(By.xpath("//span[.='Clock in']")).click();
-//    }
-
     @When("user can edit Todays task under daily plan")
     public void userCanEditTodaysTaskUnderDailyPlan() {
         clockPage.todaysTaskTab.sendKeys("adding new functionalities");
@@ -41,16 +35,14 @@ public class ClockStepDefinition  {
 
     }
 
-
-    @Then("user edits work day starting and ending time")
-    public void userEditsWorkDayStartingAndEndingTime() {
-        homePage.CRM25button.click();
-        BrowserUtils.sleep(1);
-        clockPage.timeChangePencil.click();
-        BrowserUtils.sleep(1);
-        clockPage.increseTime.click();
-        BrowserUtils.sleep(1);
-        clockPage.textAreaReason.sendKeys("ending soon");
-
-    }
+//    @Then("user edits work day starting and ending time")
+//    public void userEditsWorkDayStartingAndEndingTime() {
+//        homePage.CRM25button.click();
+//        BrowserUtils.sleep(1);
+//        clockPage.timeChangePencil.click();
+//        BrowserUtils.sleep(1);
+//        clockPage.increseTime.click();
+//        BrowserUtils.sleep(1);
+//        clockPage.textAreaReason.sendKeys("ending soon");
+//    }
 }

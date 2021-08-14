@@ -101,13 +101,13 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[.='Like']")
     public WebElement likeButton;
 
-    @FindBy(xpath = "//a[.='Unfollow']")
+    @FindBy(xpath = "(//a[.='Unfollow'])[1]")
     public WebElement followButton;
 
-    @FindBy(xpath = "//span[@id='feed-post-contentview-cnt-BLOG_POST-4818']")
+    @FindBy(xpath = "//span[@id='feed-post-contentview-cnt-BLOG_POST-4848']")
     public WebElement eyeIcon;
 
-    @FindBy(xpath = "//div[@title='Add to favorites']")
+    @FindBy(xpath = "//div[@id='log_entry_favorites_9629']")
     public WebElement starIcon;
 
     @FindBy(xpath = "//a[@class='feed-com-add-link']")

@@ -69,17 +69,14 @@ Feature: Login Functionality
     When User clicks on "Poll" tab
     And User able to click "Cancel" button
 
-
-    @wip10
+  @wip10
     Scenario: User start time tracking with "Clock In" tab
       When User clicks "Clock In" tab
-     # When user in homepage and clicks "Clock In" button
-      #And user can able to click "Clock Out" button
     When user can edit Todays task under daily plan
       And Should be able to add events
-      Then user edits work day starting and ending time
+      #Then user edits work day starting and ending time
 
-  @wip10
+  @wip11
   Scenario: User click Like button for any post
     When User able to click Like button
     And User able to follow a post by clicking "Follow" button
