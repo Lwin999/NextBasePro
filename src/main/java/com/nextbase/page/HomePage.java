@@ -143,6 +143,32 @@ public class HomePage extends BasePage {
         }
     }
 
+    @FindBy(id = "search-textbox-input")
+    public WebElement searchbox;
+
+    @FindBy(xpath = "//span[.='Find Employee']")
+    public WebElement findEmployeeClick;
+
+    @FindBy(xpath = "//div[.='Nothing found']")
+    public WebElement nothingFound;
+
+    @FindBy(xpath = "//span[.='24']")
+    public WebElement twentyFour;
+
+    @FindBy(xpath = "//div[.='Menu items']")
+    public WebElement displayMenuItems;
+
+    @FindBy(xpath = "//div[.='Other']")
+    public WebElement displayOther;
+
+    @FindBy(xpath = "//div[.='Search']")
+    public WebElement displaySearch;
+
+    @FindBy(xpath = "//span[@id='left-menu-settings']")
+    public WebElement setting;
+
+
+
 }
 
 

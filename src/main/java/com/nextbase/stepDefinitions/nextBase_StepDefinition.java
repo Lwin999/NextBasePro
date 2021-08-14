@@ -12,7 +12,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+
+import org.openqa.selenium.Keys;
+
 import org.openqa.selenium.WebElement;
+
 
 import javax.security.auth.login.Configuration;
 
@@ -168,4 +172,45 @@ public class nextBase_StepDefinition {
         homePage.commentCancelBtn.click();
     }
 
+
+    @When("user search valid info from search box {string},{string},{string},{string}")
+    public void userSearchValidInfoFromSearchBox(String employees, String doc, String post, String task) {
+        homePage.searchbox.sendKeys(employees);
+        BrowserUtils.sleep(2);
+        homePage.findEmployeeClick.click();
+        BrowserUtils.sleep(1);
+
+    }
+    @When("user cannot find info, page should show {string}")
+    public void user_cannot_find_info_page_should_show(String string) {
+        BrowserUtils.sleep(2);
+        homePage.searchbox.sendKeys("Ferrari" + Keys.ENTER);
+        homePage.nothingFound.isDisplayed();
+
+        String expected = "Nothing found";
+        String actual = expected;
+
+        Assert.assertTrue("Expected and Actual doesnt match",expected.equals(actual));
+
+    }
+    @Then("user gets {string},{string},{string},{string} when type a letter")
+    public void user_gets_when_type_a_letter(String Employees, String Groups, String string, String search) {
+        homePage.twentyFour.click();
+        homePage.searchbox.sendKeys(Groups);
+        BrowserUtils.sleep(2);
+        homePage.displayMenuItems.isDisplayed();
+        homePage.displayOther.isDisplayed();
+        homePage.displaySearch.isDisplayed();
+        homePage.displayMenuItems.getText();
+        homePage.displayOther.getText();
+        homePage.displaySearch.getText();
+        //ok
+
+
+    }
+
+
 }
+
+}
+

@@ -69,6 +69,14 @@ Feature: Login Functionality
     When User clicks on "Poll" tab
     And User able to click "Cancel" button
 
+
+
+    @wip11-3
+    Scenario: user should be able to search people,document and more from search box
+      When user search valid info from search box "employee","doc","post","task"
+      And user cannot find info, page should show "Nothing Found"
+      Then user gets "Employees","Groups","Menu items","Search" when type a letter
+
   @wip10
     Scenario: User start time tracking with "Clock In" tab
       When User clicks "Clock In" tab
@@ -84,7 +92,6 @@ Feature: Login Functionality
     And User able to click star icon to save a post as favorite
     And User can write a comment to a post
     Then User cancel a comment with "Cancel" button
-
 
 
 
