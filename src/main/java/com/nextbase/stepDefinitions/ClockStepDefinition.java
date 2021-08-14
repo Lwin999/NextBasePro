@@ -51,5 +51,6 @@ public class ClockStepDefinition  {
         clockPage.increseTime.click();
         BrowserUtils.sleep(1);
         clockPage.textAreaReason.sendKeys("ending soon");
+
     }
 }
