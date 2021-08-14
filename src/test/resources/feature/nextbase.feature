@@ -69,22 +69,20 @@ Feature: Login Functionality
     When User clicks on "Poll" tab
     And User able to click "Cancel" button
 
-
-
-    @wip11-3
+  @wip10
     Scenario: user should be able to search people,document and more from search box
       When user search valid info from search box "employee","doc","post","task"
       And user cannot find info, page should show "Nothing Found"
       Then user gets "Employees","Groups","Menu items","Search" when type a letter
 
-  @wip10
-    Scenario: User start time tracking with "Clock In" tab
-      When User clicks "Clock In" tab
-    When user can edit Todays task under daily plan
-      And Should be able to add events
-      #Then user edits work day starting and ending time
-
   @wip11
+    Scenario: User start time tracking with "Clock In" tab
+    When User clicks "Clock In" tab
+    When user can edit Todays task under daily plan
+    And Should be able to add events
+
+
+  @wip12
   Scenario: User click Like button for any post
     When User able to click Like button
     And User able to follow a post by clicking "Follow" button
