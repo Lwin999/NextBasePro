@@ -21,6 +21,7 @@ public class nextBase_StepDefinition {
 
     LoginPage login = new LoginPage();
     HomePage homePage = new HomePage();
+
     @Given("User is logged in and on the home page")
     public void userIsLoggedInAndOnTheHomePage() {
         login.loginMethod(ConfigurationReader.getProperty("username"),ConfigurationReader.getProperty("password"));

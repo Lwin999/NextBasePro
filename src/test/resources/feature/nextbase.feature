@@ -37,14 +37,14 @@ Feature: Login Functionality
     And User able to click "Send" button
     Then poll should be visible in Activity Stream
 
-  @us005
+  @wip5
   Scenario: User should be able to vote for a poll
     When User clicks on "Poll" tab
     And User enter any "text" on the "Poll" field
     And User fills out the "Question" box
     And User fills out the "Answer1" box
     And User fills out the "Answer2" box
-    And User able to click Send button
+    And User able to click "Send" button
     And User clicks selects answer box
     And User clicks "Vote" button
     And User clicks "Vote again" button
@@ -72,4 +72,13 @@ Feature: Login Functionality
   Scenario: Users are able to cancel creating a poll
     When User clicks on "Poll" tab
     And User able to click "Cancel" button
+
+    @wip10
+    Scenario: User start time tracking with "Clock In" tab
+      When User clicks "Clock In" tab
+     # When user in homepage and clicks "Clock In" button
+      #And user can able to click "Clock Out" button
+    When user can edit Todays task under daily plan
+      And Should be able to add events
+      Then user edits work day starting and ending time
 
