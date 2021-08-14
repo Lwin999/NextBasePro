@@ -12,7 +12,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.Keys;
+
+import org.openqa.selenium.WebElement;
+
 
 import javax.security.auth.login.Configuration;
 
@@ -22,6 +26,7 @@ public class nextBase_StepDefinition {
 
     LoginPage login = new LoginPage();
     HomePage homePage = new HomePage();
+
     @Given("User is logged in and on the home page")
     public void userIsLoggedInAndOnTheHomePage() {
         login.loginMethod(ConfigurationReader.getProperty("username"),ConfigurationReader.getProperty("password"));
@@ -130,6 +135,43 @@ public class nextBase_StepDefinition {
     public void userAbleToClickSendButton() {
         homePage.sendBtn.click();
     }
+    @When("User able to click Like button")
+    public void userAbleToClickLikeButton() {
+        homePage.likeButton.click();
+        homePage.likeButton.isSelected();
+    }
+    @And("User able to follow a post by clicking {string} button")
+    public void userAbleToFollowAPostByClickingButton(String arg0) {
+        BrowserUtils.sleep(1);
+        homePage.followButton.click();
+        homePage.followButton.isSelected();
+    }
+    @And("User can see who are the people viewed a post with eye icon")
+    public void userCanSeeWhoAreThePeopleViewedAPostWithEyeIcon() {
+        BrowserUtils.sleep(1);
+        homePage.eyeIcon.click();
+        homePage.eyeIcon.isSelected();
+    }
+    @And("User able to click star icon to save a post as favorite")
+    public void userAbleToClickStarIconToSaveAPostAsFavorite() {
+        BrowserUtils.sleep(1);
+        homePage.starIcon.click();
+        homePage.starIcon.isSelected();
+    }
+    @And("User can write a comment to a post")
+    public void userCanWriteACommentToAPost() {
+        BrowserUtils.sleep(1);
+        homePage.addCommentbox.click();
+        Driver.getDriver().switchTo().frame(homePage.addiframe);
+        homePage.commentBody.sendKeys("helloWorld");
+        Driver.getDriver().switchTo().defaultContent();
+    }
+    @Then("User cancel a comment with {string} button")
+    public void userCancelACommentWithButton(String arg0) {
+        BrowserUtils.sleep(1);
+        homePage.commentCancelBtn.click();
+    }
+
 
     @When("user search valid info from search box {string},{string},{string},{string}")
     public void userSearchValidInfoFromSearchBox(String employees, String doc, String post, String task) {
@@ -169,3 +211,6 @@ public class nextBase_StepDefinition {
 
 
 }
+
+}
+

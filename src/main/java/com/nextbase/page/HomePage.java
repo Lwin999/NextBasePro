@@ -98,6 +98,29 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[.='Add question']")
     public WebElement addquestionbtn;
 
+    @FindBy(xpath = "//a[.='Like']")
+    public WebElement likeButton;
+
+    @FindBy(xpath = "(//a[.='Unfollow'])[1]")
+    public WebElement followButton;
+
+    @FindBy(xpath = "//span[@id='feed-post-contentview-cnt-BLOG_POST-4848']")
+    public WebElement eyeIcon;
+
+    @FindBy(xpath = "//div[@id='log_entry_favorites_9629']")
+    public WebElement starIcon;
+
+    @FindBy(xpath = "//a[@class='feed-com-add-link']")
+    public WebElement addCommentbox;
+
+    @FindBy(css = ".bx-editor-iframe")
+    public WebElement addiframe;
+
+    @FindBy(xpath = "//body[@contenteditable='true']")
+    public WebElement commentBody;
+
+    @FindBy(xpath = "//button[@class='ui-btn ui-btn-sm ui-btn-link']")
+    public WebElement commentCancelBtn;
 
     public void tabClicker(String tabName){
         Driver.getDriver().findElement(By.xpath("//span[.='"+tabName+"']")).click();
