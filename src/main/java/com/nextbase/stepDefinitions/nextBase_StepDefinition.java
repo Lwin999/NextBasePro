@@ -162,6 +162,7 @@ public class nextBase_StepDefinition {
         homePage.displayMenuItems.getText();
         homePage.displayOther.getText();
         homePage.displaySearch.getText();
+        //ok
 
 
     }
