@@ -73,3 +73,11 @@ Feature: Login Functionality
     When User clicks on "Poll" tab
     And User able to click "Cancel" button
 
+
+    @wip11-3
+    Scenario: user should be able to search people,document and more from search box
+      When user search valid info from search box "employee","doc","post","task"
+      And user cannot find info, page should show "Nothing Found"
+      Then user gets "Employees","Groups","Menu items","Search" when type a letter
+
+
